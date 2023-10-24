@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const register = async (req, res) => {
+  const { formData } = req.body;
   const {
     email,
     password,
@@ -15,11 +16,11 @@ const register = async (req, res) => {
     phone_number,
     address,
     city,
-    age, // Add age to the request body
-    gender, // Add gender to the request body
-    country, // Add country to the request body
-  } = req.body;
-
+    age,
+    gender,
+    country,
+  } = formData;
+  console.log(formData);
   try {
     // Check if email already exists
     const emailAlreadyExists = await User.findOne({ email });
@@ -137,10 +138,6 @@ module.exports = {
   login,
   logout,
 };
-
-
-
-
 
 // const register = async (req, res) => {
 //   const {
