@@ -84,7 +84,8 @@ const login = async (req, res) => {
     }
     const tokenUser = createTokenUser(user);
     attachCookiesToResponse({ res, user: tokenUser });
-    res.status(StatusCodes.CREATED).json({ user: tokenUser });
+    token = res.getHeaders()["set-cookie"];
+    res.status(StatusCodes.CREATED).json({ user: tokenUser, token: token });
   } catch (error) {
     // Handle other errors here, if needed
     return res.status(500).json({ error: "An error occurred" });
@@ -111,7 +112,6 @@ const forgotPassword = async (req, res) => {
   console.log("hello", email);
   if (email) {
     console.log(email);
-  
 
     var forgotPasswordLink = "http://localhost:3000/reset-password/?token=";
     var mailOptions = {
@@ -191,7 +191,6 @@ const ResetPassword = async (req, res) => {
   }
 };
 
-
 const logout = async (req, res) => {
   res.cookie("token", "logout", {
     httpOnly: true,
@@ -205,7 +204,7 @@ module.exports = {
   login,
   logout,
   ResetPassword,
-  forgotPassword
+  forgotPassword,
 };
 
 // const register = async (req, res) => {
