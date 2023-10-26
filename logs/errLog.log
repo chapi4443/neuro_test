@@ -17,3 +17,4 @@
 20231023	16:27:08	d0ec7374-9f43-4850-8126-b541e873b0ad	Error: Please provide email and password	POST	/api/v1/auth/login	http://localhost:3000
 20231023	16:28:56	e2e649c3-5bc4-471b-844f-5371a6fd081d	Error: Invalid Credentials-password	POST	/api/v1/auth/login	http://localhost:3000
 20231024	14:39:51	69e6feff-d0b6-4f50-b4b4-adb9363da44a	Error: Invalid Credentials	POST	/api/v1/auth/login	http://localhost:3000
+20231024	23:30:02	ac826a87-af2b-4e48-bb46-b93f31bb3881	TypeError: Cannot destructure property 'email' of 'formData' as it is undefined.	POST	/api/v1/auth/register	undefined

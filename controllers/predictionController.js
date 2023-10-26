@@ -12,7 +12,7 @@ function cleanUserId(userId) {
 
 async function predictStrokeRisk(req, res) {
   try {
-    // const { userId } = req.user; // Assuming you have the user's ID available in req.user
+    const { userId } = req.user; // Assuming you have the user's ID available in req.user
 
     // Forward the request to the Flask application
     const flaskUrl = "http://127.0.0.1:4000"; // Change the port if necessary
@@ -22,14 +22,14 @@ async function predictStrokeRisk(req, res) {
     );
 
     // Store the prediction data in MongoDB
-    // const predictionData = {
-    //   user: new mongoose.Types.ObjectId(userId), // Use 'new' to create a new ObjectId
-    //   prediction: response.data["Logistic Regression Probability"],
-    //   data: req.body.data[0], // Save the input data used for the prediction
-    // };
+    const predictionData = {
+      user: new mongoose.Types.ObjectId(userId), // Use 'new' to create a new ObjectId
+      prediction: response.data["Logistic Regression Probability"],
+      data: req.body.data[0], // Save the input data used for the prediction
+    };
 
-    // const prediction = new StrokePrediction(predictionData);
-    // await prediction.save();
+    const prediction = new StrokePrediction(predictionData);
+    await prediction.save();
 
     // Send the Flask application's response back to the client
     res.json(response.data);
