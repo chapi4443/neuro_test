@@ -8,6 +8,12 @@ const StrokePredictionSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+    advice: {
+      type: String, // Store the advice text
+    },
+    interpretation: {
+      type: String, // Store the interpretation text
+    },
     prediction: {
       type: Number,
       required: true,
