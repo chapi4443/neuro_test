@@ -29,3 +29,11 @@
 20231027	09:22:35	db0a0bab-8320-4127-b9bc-c49ef37f4720	MongoServerSelectionError: connection <monitor> to 34.198.165.26:27017 timed out	GET	/api/v1/users/65367c1e103fa6b3b2305e30	http://localhost:3000
 20231027	09:22:37	bb086085-9d00-4525-8a89-4c136d3dab37	MongoServerSelectionError: connection <monitor> to 34.198.165.26:27017 timed out	GET	/api/v1/users/65367c1e103fa6b3b2305e30	http://localhost:3000
 20231027	09:23:32	26a0ff69-1c86-4da9-9d51-b6cae49212b1	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-svoxdub-shard-00-00.j71kid8.mongodb.net	GET	/api/v1/users/65367c1e103fa6b3b2305e30	http://localhost:3000
+20231027	10:49:39	1c00eaa6-7751-48f5-91a9-f16fccd7d958	SyntaxError: Unexpected token " in JSON at position 0	POST	/api/v1/users/updateuser	http://localhost:3000
+20231027	10:49:39	ee1dbcd0-0c45-40ec-b317-fedbf6985580	SyntaxError: Unexpected token " in JSON at position 0	POST	/api/v1/users/updateuser	http://localhost:3000
+20231027	10:55:49	dea3969c-5aa9-4e5d-8a3e-75fe5034cc50	Error: Please provide all values	PATCH	/api/v1/users/updateuser	http://localhost:3000
+20231027	10:56:14	7dbab104-bacc-415e-89ea-781c8693658f	Error: Please provide all values	PATCH	/api/v1/users/updateuser	http://localhost:3000
+20231027	10:57:19	4fdfea60-4c37-41ad-a284-029110485553	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-svoxdub-shard-00-00.j71kid8.mongodb.net	GET	/api/v1/users/65367c1e103fa6b3b2305e30	http://localhost:3000
+20231027	10:57:25	58d18fd3-30d0-42c8-b0cc-d220c2f17467	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-svoxdub-shard-00-00.j71kid8.mongodb.net	GET	/api/v1/users/65367c1e103fa6b3b2305e30	http://localhost:3000
+20231027	11:02:48	5cd67e29-c3dd-4263-90f5-457d1a77f871	Error: Please provide all values	PATCH	/api/v1/users/updateuser	http://localhost:3000
+20231027	11:04:14	91c70a14-9728-44ff-a531-00ed587e1b88	Error: Please provide all values	PATCH	/api/v1/users/updateuser	http://localhost:3000
