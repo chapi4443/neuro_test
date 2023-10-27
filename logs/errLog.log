@@ -18,3 +18,14 @@
 20231023	16:28:56	e2e649c3-5bc4-471b-844f-5371a6fd081d	Error: Invalid Credentials-password	POST	/api/v1/auth/login	http://localhost:3000
 20231024	14:39:51	69e6feff-d0b6-4f50-b4b4-adb9363da44a	Error: Invalid Credentials	POST	/api/v1/auth/login	http://localhost:3000
 20231024	23:30:02	ac826a87-af2b-4e48-bb46-b93f31bb3881	TypeError: Cannot destructure property 'email' of 'formData' as it is undefined.	POST	/api/v1/auth/register	undefined
+20231027	09:09:42	0eda562f-4b61-4c52-9f26-62c6ba4e264a	TypeError: checkPermissions is not a function	GET	/api/v1/users/65367c1e103fa6b3b2305e30	http://localhost:3000
+20231027	09:09:42	c793596b-9d88-49a0-8911-978b898f06f1	TypeError: checkPermissions is not a function	GET	/api/v1/users/65367c1e103fa6b3b2305e30	http://localhost:3000
+20231027	09:09:46	e6556b13-005e-48fb-bd4e-da53acfcd97c	TypeError: checkPermissions is not a function	GET	/api/v1/users/65367c1e103fa6b3b2305e30	http://localhost:3000
+20231027	09:09:46	4d528599-1a55-4efd-8204-a6fe66f3333e	TypeError: checkPermissions is not a function	GET	/api/v1/users/65367c1e103fa6b3b2305e30	http://localhost:3000
+20231027	09:09:47	c99d244c-bb8e-4fd3-8b3d-6e3e27e1b3d4	TypeError: checkPermissions is not a function	GET	/api/v1/users/65367c1e103fa6b3b2305e30	http://localhost:3000
+20231027	09:09:48	15b778ba-8c5e-4695-87ee-5c031c93ffb7	TypeError: checkPermissions is not a function	GET	/api/v1/users/65367c1e103fa6b3b2305e30	http://localhost:3000
+20231027	09:14:02	bc961459-cce2-47f1-a795-8f142317ca25	TypeError: checkPermissions is not a function	GET	/api/v1/users/65367c1e103fa6b3b2305e30	http://localhost:3000
+20231027	09:14:03	c15093a2-cd9f-4366-b4cb-f9f4515144e1	TypeError: checkPermissions is not a function	GET	/api/v1/users/65367c1e103fa6b3b2305e30	http://localhost:3000
+20231027	09:22:35	db0a0bab-8320-4127-b9bc-c49ef37f4720	MongoServerSelectionError: connection <monitor> to 34.198.165.26:27017 timed out	GET	/api/v1/users/65367c1e103fa6b3b2305e30	http://localhost:3000
+20231027	09:22:37	bb086085-9d00-4525-8a89-4c136d3dab37	MongoServerSelectionError: connection <monitor> to 34.198.165.26:27017 timed out	GET	/api/v1/users/65367c1e103fa6b3b2305e30	http://localhost:3000
+20231027	09:23:32	26a0ff69-1c86-4da9-9d51-b6cae49212b1	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-svoxdub-shard-00-00.j71kid8.mongodb.net	GET	/api/v1/users/65367c1e103fa6b3b2305e30	http://localhost:3000
