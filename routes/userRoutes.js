@@ -6,7 +6,7 @@ const {
 } = require("../middleware/authentication");
 const {
   updateUser,
-  updateUserPassword,
+  updateUserPasswordandemail,
   editProfilePicture,
   deleteProfilePicture,
   createProfilePicture,
@@ -14,19 +14,19 @@ const {
 } = require("../controllers/userController");
 
 // Route for updating user information
-router.patch("/updateUser", authenticateUser, updateUser);
+router.patch("/updateUser",  updateUser);
 //Route for gettinguser information 
-router.route("/:id").get(authenticateUser, getSingleUser);
+router.route("/:id").get( getSingleUser);
 // Route for updating user password
-router.patch("/updateUserPassword", authenticateUser, updateUserPassword);
+router.patch("/updateUserPassword",  updateUserPasswordandemail);
 
 // Route for editing profile picture
-router.patch("/editProfilePicture", authenticateUser, editProfilePicture);
+router.patch("/editProfilePicture", editProfilePicture);
 
 // Route for deleting profile picture
-router.delete("/deleteProfilePicture", authenticateUser, deleteProfilePicture);
+router.delete("/deleteProfilePicture",  deleteProfilePicture);
 
 // Route for creating a profile picture
-router.post("/createProfilePicture", authenticateUser, createProfilePicture);
+router.post("/createProfilePicture",  createProfilePicture);
 
 module.exports = router;
