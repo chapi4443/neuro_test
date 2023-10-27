@@ -147,11 +147,9 @@ const getSingleUser = async (req, res) => {
   res.status(StatusCodes.OK).json({ user });
 };
 
-
 // Update user information
 const updateUser = async (req, res) => {
   const {
-   
     first_name,
     last_name,
     date_of_birth,
@@ -164,7 +162,6 @@ const updateUser = async (req, res) => {
   } = req.body;
 
   if (
-   
     !first_name ||
     !last_name ||
     !date_of_birth ||
@@ -179,7 +176,7 @@ const updateUser = async (req, res) => {
   }
 
   try {
-    const userId = req.user.userId;
+    const { userId } = req.body;
 
     // Find the user by their ID
     const user = await User.findOne({ _id: userId });
@@ -189,7 +186,7 @@ const updateUser = async (req, res) => {
     }
 
     // Update user's information
-   
+
     user.first_name = first_name;
     user.last_name = last_name;
     user.date_of_birth = date_of_birth;
@@ -225,14 +222,14 @@ const updateUser = async (req, res) => {
 };
 
 const updateUserPasswordandemail = async (req, res) => {
-  const { oldPassword, newPassword, newEmail } = req.body;
+  const { oldPassword, newPassword, newEmail, userId } = req.body;
   if (!oldPassword || !newPassword) {
     throw new CustomError.BadRequestError(
       "Please provide both oldPassword and newPassword."
     );
   }
 
-  const user = await User.findOne({ _id: req.user.userId });
+  const user = await User.findOne({ _id: userId });
 
   const isPasswordCorrect = await user.comparePassword(oldPassword);
   if (!isPasswordCorrect) {
@@ -254,12 +251,11 @@ const updateUserPasswordandemail = async (req, res) => {
     .json({ msg: "Success! Password and email updated." });
 };
 
-
 module.exports = {
   updateUser,
   updateUserPasswordandemail,
   editProfilePicture,
   deleteProfilePicture,
   createProfilePicture,
-  getSingleUser
+  getSingleUser,
 };
