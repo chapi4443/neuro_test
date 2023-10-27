@@ -3,7 +3,7 @@ const router = express.Router();
 const { authorizePermissions } = require("../middleware/authentication");
 const {
   updateUser,
-  updateUserPassword,
+  updateUserPasswordandemail,
   editProfilePicture,
   deleteProfilePicture,
   createProfilePicture,
@@ -11,19 +11,19 @@ const {
 } = require("../controllers/userController");
 
 // Route for updating user information
-router.patch("/updateUser", updateUser);
-//Route for gettinguser information
-router.get("/:id" , getSingleUser);
+router.patch("/updateUser",  updateUser);
+//Route for gettinguser information 
+router.route("/:id").get( getSingleUser);
 // Route for updating user password
-router.patch("/updateUserPassword", updateUserPassword);
+router.patch("/updateUserPassword",  updateUserPasswordandemail);
 
 // Route for editing profile picture
 router.patch("/editProfilePicture", editProfilePicture);
 
 // Route for deleting profile picture
-router.delete("/deleteProfilePicture", deleteProfilePicture);
+router.delete("/deleteProfilePicture",  deleteProfilePicture);
 
 // Route for creating a profile picture
-router.post("/createProfilePicture", createProfilePicture);
+router.post("/createProfilePicture",  createProfilePicture);
 
 module.exports = router;
