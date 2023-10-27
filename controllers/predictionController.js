@@ -10,36 +10,65 @@ function cleanUserId(userId) {
   return userId.replace(/[^a-fA-F0-9]/g, "");
 }
 
-async function predictStrokeRisk(req, res) {
-  try {
-    console.log("userId");
-    const { userId } = req.body; // Assuming you have the user's ID available in req.user
-    // Forward the request to the Flask application
-    const flaskUrl = "http://127.0.0.1:4000"; // Change the port if necessary
-    const response = await axios.post(
-      `${flaskUrl}/predict_stroke_risk`,
-      req.body
-    );
+// async function predictStrokeRisk(req, res) {
+//   try {
+//     console.log("userId");
+//     const { userId } = req.body; // Assuming you have the user's ID available in req.user
+//     // Forward the request to the Flask application
+//     const flaskUrl = "http://127.0.0.1:4000"; // Change the port if necessary
+//     const response = await axios.post(
+//       `${flaskUrl}/predict_stroke_risk`,
+//       req.body
+//     );
 
-    // Store the prediction data in MongoDB
-    const predictionData = {
-      user: new mongoose.Types.ObjectId(userId), // Use 'new' to create a new ObjectId
-      prediction: response.data["Logistic Regression Probability"],
-      data: req.body.data[0], // Save the input data used for the prediction
-    };
+//     // Store the prediction data in MongoDB
+//     const predictionData = {
+//       user: new mongoose.Types.ObjectId(userId), // Use 'new' to create a new ObjectId
+//       prediction: response.data["Logistic Regression Probability"],
+//       data: req.body.data[0], // Save the input data used for the prediction
+//     };
 
-    const prediction = new StrokePrediction(predictionData);
-    await prediction.save();
+//     const prediction = new StrokePrediction(predictionData);
+//     await prediction.save();
 
-    // Send the Flask application's response back to the client
-    res.json(response.data);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
+//     // Send the Flask application's response back to the client
+//     res.json(response.data);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: "Internal Server Error" });
+//   }
+// }
+
+async function predictStrokeRisk(req, res) { 
+  try { 
+    console.log("userId"); 
+    const { userId } = req.body; // Assuming you have the user's ID available in req.user 
+    // Forward the request to the Flask application 
+    const flaskUrl = "http://127.0.0.1:4000"; // Change the port if necessary 
+    const response = await axios.post( 
+      `${flaskUrl}/predict_stroke_risk`, 
+      req.body 
+    ); 
+ 
+    // Store the prediction data in MongoDB 
+    const predictionData = { 
+      user: new mongoose.Types.ObjectId(userId), // Use 'new' to create a new ObjectId 
+      advice: response.data["Advice"], 
+      interpretation: response.data["Interpretation"], 
+      prediction: response.data["Logistic Regression Probability"], 
+      data: req.body.data[0], // Save the input data used for the prediction 
+    }; 
+ 
+    const prediction = new StrokePrediction(predictionData); 
+    await prediction.save(); 
+ 
+    // Send the Flask application's response back to the client 
+    res.json(response.data); 
+  } catch (error) { 
+    console.error(error); 
+    res.status(500).json({ error: "Internal Server Error" }); 
+  } 
 }
-
-
 // controllers/predictionController.js
 
 async function getAllPredictions(req, res) {
