@@ -93,7 +93,7 @@ const login = async (req, res) => {
 };
 const forgotPassword = async (req, res) => {
   var email = req.body.email;
-  console.log(email);
+  console.log(req.body);
   const user = await User.findOne({ email });
   if (!user) {
     console.log("User Not found");

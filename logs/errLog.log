@@ -37,3 +37,15 @@
 20231027	10:57:25	58d18fd3-30d0-42c8-b0cc-d220c2f17467	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-svoxdub-shard-00-00.j71kid8.mongodb.net	GET	/api/v1/users/65367c1e103fa6b3b2305e30	http://localhost:3000
 20231027	11:02:48	5cd67e29-c3dd-4263-90f5-457d1a77f871	Error: Please provide all values	PATCH	/api/v1/users/updateuser	http://localhost:3000
 20231027	11:04:14	91c70a14-9728-44ff-a531-00ed587e1b88	Error: Please provide all values	PATCH	/api/v1/users/updateuser	http://localhost:3000
+20231029	02:32:41	e42db406-abb2-41c3-b2c2-93c4eea51f33	Error: Cannot find module 'nodemailer'
+Require stack:
+- C:\Users\HP\Desktop\React\neuro_test\controllers\authController.js
+- C:\Users\HP\Desktop\React\neuro_test\routes\authRoutes.js
+- C:\Users\HP\Desktop\React\neuro_test\app.js	POST	/api/v1/auth/forgot-password	http://localhost:3000
+20231029	02:34:22	15546f6f-8dc6-4137-b9f9-ab5c5281e681	TypeError: Cannot destructure property 'email' of 'data' as it is undefined.	POST	/api/v1/auth/forgot-password	http://localhost:3000
+20231029	02:35:06	e8c50af9-8d7a-45df-8b41-1e333508d440	TypeError: Cannot destructure property 'email' of 'data' as it is undefined.	POST	/api/v1/auth/forgot-password	http://localhost:3000
+20231029	02:36:36	1dcd875a-bb49-4676-9bbb-64b9e3232593	Error: Cannot find module 'nodemailer'
+Require stack:
+- C:\Users\HP\Desktop\React\neuro_test\controllers\authController.js
+- C:\Users\HP\Desktop\React\neuro_test\routes\authRoutes.js
+- C:\Users\HP\Desktop\React\neuro_test\app.js	POST	/api/v1/auth/forgot-password	undefined
