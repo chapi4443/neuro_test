@@ -10,6 +10,11 @@ from sklearn.metrics import roc_auc_score, precision_recall_fscore_support
 from sklearn.linear_model import LogisticRegression
 import google.generativeai as palm
 import os
+import warnings
+from sklearn.exceptions import InconsistentVersionWarning
+
+warnings.filterwarnings("ignore", category=InconsistentVersionWarning)
+
 from dotenv import load_dotenv
 
 
