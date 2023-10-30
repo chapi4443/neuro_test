@@ -109,11 +109,21 @@ const forgotPassword = async (req, res) => {
       pass: "eivj sueg qdqg zmsl",
     },
   });
+  const forgotPasswordToken = jwt.sign(
+    { userEmail: email },
+    "Wintu-Yoni@2022",
+    {
+      expiresIn: "4h",
+    }
+  );
+
+  // var forgotPasswordLink =
+  //   "http://localhost:3000/login/?token=" + forgotPasswordToken;
   console.log("hello", email);
   if (email) {
     console.log(email);
 
-    var forgotPasswordLink = "http://localhost:3000/reset-password/?token=";
+    var forgotPasswordLink = `http://localhost:3000/reset-password/?token=${forgotPasswordToken}`;
     var mailOptions = {
       from: "NeurogeAi@gmail.com",
       to: email,
@@ -162,6 +172,7 @@ const forgotPassword = async (req, res) => {
   }
 };
 const ResetPassword = async (req, res) => {
+  console.log(req.body);
   try {
     const { newPassword, email } = req.body;
     console.log(newPassword, email);
@@ -177,6 +188,7 @@ const ResetPassword = async (req, res) => {
       { $set: { password: encreptedPassword } }
     );
     console.log(result);
+
     // Check the result and handle it accordingly
     if (result.modifiedCount === 1) {
       return res.json({ message: "Password reset successful" });

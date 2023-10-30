@@ -49,3 +49,5 @@ Require stack:
 - C:\Users\HP\Desktop\React\neuro_test\controllers\authController.js
 - C:\Users\HP\Desktop\React\neuro_test\routes\authRoutes.js
 - C:\Users\HP\Desktop\React\neuro_test\app.js	POST	/api/v1/auth/forgot-password	undefined
+20231029	03:19:38	8b734258-ce77-4dcb-9094-7a4764a9e81c	TypeError: Cannot destructure property 'email' of 'formData' as it is undefined.	POST	/api/v1/auth/register	http://localhost:3000
+20231029	03:20:49	0c01192c-50cd-44d4-8a71-e690d9f41299	TypeError: Cannot destructure property 'email' of 'formData' as it is undefined.	POST	/api/v1/auth/register	http://localhost:3000
