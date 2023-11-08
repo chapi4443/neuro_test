@@ -42,5 +42,3 @@ The `package.json` file includes the dependencies and scripts for managing the N
 ### Requirements.txt
 
 The `requirements.txt` file lists the Python dependencies required for the Flask application. It includes libraries and modules necessary for data preprocessing, model training, and generating medical advice.
-
-Feel free to explore the contents of each file for a deeper understanding of the backend functionalities and implementation.
